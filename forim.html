@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="1.css">
+<head>
+  <meta charset="UTF-8">
+  <title>HAPPY IM's DAY</title>
+</head>
+<body>
+  <div class="all">
+      <h1>สวัสดีค่ะน้องอิม</h1>
+      <h2>วันนี้วันอะไรงะะะะะ</h2>
+    <form id="FillBirthday" >
+      <input type="text" name="day" placeholder="วันอะไยน้าา" required>
+      <button type="submit" class="button" id="status">Go Go</a></button>
+    </form>
+  </div>
+
+  <script>
+    
+    const form = document.getElementById("FillBirthday");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const data = {
+        day: form.elements['day'].value,
+      };
+
+      // place link
+      fetch("https://script.google.com/macros/s/AKfycbxt6BxrEYtjT9Y4Yaegxnpe2NJSc03azOzt5kRWX1MtUoI-NIBrDVoCqJutI3bk1fVK/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(res => res.text())
+      .then(txt => {
+        document.getElementById("status").innerText = txt;
+        form.reset();
+        window.location.href = "2.html";
+      })
+      .catch(err => {
+        document.getElementById("status").innerText = "Error: " + err;
+      });
+      // End of fetch
+
+    });
+
+  </script>
+</body>
+</html>
