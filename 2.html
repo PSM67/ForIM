@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>   
+     <p>
+        <h1>เย่ะ วันเกิดแย้ววว 🎂</h1>
+        <h2>หนายยยยย เป่าเค้กเร้ววววว 🎉</h2>
+    </p><br>
+    <div class="cake" id="cake">
+        <img src="cake.png" width="700px" height="700px" class="cakeimg">
+        <img src="candle(1).png" class="candle candle1">
+        <img src="candle(2).png" class="candle candle2">
+    </div><br>
+    <button class="blow" onclick="blowCandles()">"เป่าตรงนี้ๆๆๆ"</button>
+</body>
+
+  <script>
+     function blowCandles() {
+      const candles = document.querySelectorAll('.candle');
+      candles.forEach(candle => {
+        // ดึงเลขในวงเล็บออกมา เช่น (1), (2), (3)
+        const match = candle.src.match(/\((\d+)\)\.png$/);
+        if (match) {
+          const num = match[1]; 
+          candle.src = `candle.off(${num}).png`; // ใช้ชื่อไฟล์ใหม่ที่มีเลขเหมือนกัน
+        }
+      });
+      const text = document.querySelectorAll('.blow');
+        text.forEach(blow => {
+            blow.innerText = " เย่ะะะ เป่าเค้กได้แล้ว 🎉";
+        });
+    }
+
+  </script>
+
+</html>

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffe6f0, #e6f7ff);
+      font-family: "Itim", cursive;
+    }
+
+    .cake {
+      margin-right: -50px;
+      position: relative;
+      display: inline-block;
+      margin-top: -200px;
+      animation: float 1.5s ease-in-out infinite alternate;
+      margin-right: 70px;
+    }
+
+    .cakeimg {
+      max-width: 150%;
+      height: auto;
+    }
+
+    .candle1, .candle2{
+      position: absolute;
+      width: 200px;
+      height: auto;
+    }
+    .candle2{
+        width: 250px;
+    }
+
+    /* จัดเรียงเทียนให้อยู่บนหน้าเค้ก */
+    .candle1 { top: 210px; left: 220px; }
+    .candle2 { top: 210px;  left: 280px; }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-12px); }
+    }
+
+    h1 {
+      color: #ff6699;
+      font-size: 2.5em;
+      margin-top: 50px;
+      margin-left: -50px;
+    }
+
+    h2 {
+      color: #3399cc;
+      font-size: 1.8em;
+      margin-left: -50px;
+    }
+    .blow{
+        animation: float 1.5s ease-in-out infinite alternate;
+        background: none;
+        border: none;
+        font-size: 1.2em;
+        align-items: center;
+        justify-content: center;
+        margin-right: 50px;
+        margin-top: -200px;
+    }
